@@ -11,6 +11,12 @@ import AdminDashboard from "./pages/admin-view/dashboard";
 import AdminFeatures from "./pages/admin-view/features";
 import AdminOrders from "./pages/admin-view/orders";
 import AdminProducts from "./pages/admin-view/products";
+import ShoppingLayout from "./components/shopping-view/layout";
+import ShoppingHome from "./pages/shopping-view/home";
+import ShoppingListing from "./pages/shopping-view/listing";
+import ShoppingCheckout from "./pages/shopping-view/checkout";
+import ShoppingAccount from "./pages/shopping-view/account";
+
 
 function App() {
 
@@ -39,6 +45,13 @@ function App() {
           <Route path="features" element={<AdminFeatures />}></Route>
           <Route path="orders" element={<AdminOrders />}></Route>
           <Route path="products" element={<AdminProducts />}></Route>
+        </Route>
+
+        <Route path="/shop" element={<ShoppingLayout />}>
+          <Route path="home" element={<ShoppingHome/>}/>
+          <Route path="listing" element={<ShoppingListing />}/>
+          <Route path="checkout" element={<ShoppingCheckout />}/>
+          <Route path="account" element={<ShoppingAccount />}/>
         </Route>
 
         <Route path="/unauth-page" element={<UnauthPage />} />
